@@ -1,0 +1,1029 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:E_ticaret"
+        xmlns:Properties="clr-namespace:E_ticaret.Properties" x:Class="E_ticaret.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStyle="ToolWindow">
+    <Grid Background="#FF7B7B7B">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="243*"/>
+            <ColumnDefinition Width="157*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="Navigationbar" HorizontalAlignment="Left" Height="50" Margin="0,1,0,0" VerticalAlignment="Top" Width="800" Background="#FFFFAE66" Grid.ColumnSpan="2">
+            <Button x:Name="Homebtn" Content="E-Ticaret" Height="50" Width="82" HorizontalAlignment="Left" Background="{x:Null}" FontFamily="Bahnschrift SemiBold Condensed" BorderBrush="White" Click="Homebtn_Click" Visibility="Hidden"/>
+            <CheckBox x:Name="Admincheck" Content="Admin" Height="25" Width="78" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Top" Checked="Admincheck_Checked" Unchecked="Admincheck_Unchecked_1" Visibility="Hidden">
+                <CheckBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0" Y="-40"/>
+                    </TransformGroup>
+                </CheckBox.RenderTransform>
+            </CheckBox>
+            <Button x:Name="Kategoribtn" Content="Kategoriler" Height="50" Width="82" Background="{x:Null}" FontFamily="Bahnschrift SemiBold Condensed" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" BorderBrush="White" Click="Kategoribtn_Click" Visibility="Hidden">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="82" Y="-75"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="Ürünlerbtn" Content="Ürünler" Height="50" Width="82" Background="{x:Null}" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderBrush="White" Click="Ürünlerbtn_Click" Visibility="Hidden">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="164" Y="-125"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="Sepetbtn" Content="Sepet" Height="50" Width="82" Background="{x:Null}" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" BorderBrush="White" Click="Sepetbtn_Click" Visibility="Hidden">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="246" Y="-175"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="Tedarikçibtn" Content="Tedarikçi ekle" Height="50" Width="82" Background="{x:Null}" FontFamily="Bahnschrift SemiBold Condensed" HorizontalAlignment="Right" IsDefault="True" RenderTransformOrigin="0.5,0.5" BorderBrush="White"  Visibility="Hidden" Click="Tedarikçibtn_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-82" Y="-225"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kategorieklebtn" Content="Kategori ekle" Background="{x:Null}" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="0.5,0.5" BorderBrush="White"  Visibility="Hidden" HorizontalAlignment="Right" Width="82" Height="50" Click="kategorieklebtn_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-246" Y="-275"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="urunekle" Content="Ürün ekle" Background="{x:Null}" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="0.5,0.5" BorderBrush="White"  Visibility="Hidden" HorizontalAlignment="Right" Width="82" Height="50" Padding="1,1,0,1" IsDefault="True" Click="urunekle_Click">
+                <Button.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="26"/>
+                    </TransformGroup>
+                </Button.LayoutTransform>
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-163.6" Y="-325"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="Kargoeklebtn" Content="Kargo firması ekle" Background="{x:Null}" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="0.5,0.5" BorderBrush="White" HorizontalAlignment="Right" Height="50" Width="82" Click="Kargoeklebtn_Click" Visibility="Hidden">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0" Y="-375"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+        </StackPanel>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,51,0,0" VerticalAlignment="Top" Width="800" Background="White" Grid.ColumnSpan="2"/>
+        <StackPanel x:Name="Kategoriler" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Grid.ColumnSpan="2" RenderTransformOrigin="0.503,0.095">
+            <Label x:Name="kategoriler" Content="Kategoriler&#xA;" Height="39" Width="117" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="2"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Button x:Name="kategorigöster1" Content="Button" Height="31" Width="100" Margin="50,0,0,0" HorizontalAlignment="Left" Click="kategorigöster1_Click" Visibility="Hidden"/>
+            <Button x:Name="kategorigöster2" Content="Button" Height="31" Width="100" Margin="200,0,0,0" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Visibility="Hidden" Click="kategorigöster2_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-31"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kategorigöster4" Content="Button" Height="31" Width="100" Margin="500,0,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Visibility="Hidden" Click="kategorigöster4_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-62"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kategorigöster3" Content="Button" Height="31" Width="100" RenderTransformOrigin="0.5,0.5" Visibility="Hidden" Click="kategorigöster3_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-93"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kategorigöster5" Content="Button" Height="31" Width="100" Margin="650,0,0,0" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Visibility="Hidden" Click="kategorigöster5_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-124"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Label x:Name="ürünkisim1" Content="Label" Height="30" Width="100" Margin="50,0,0,20" HorizontalAlignment="Left" Visibility="Hidden"/>
+            <Label x:Name="ürünkfiyat1" Content="Label" Height="30" Width="100" HorizontalAlignment="Left" Margin="50,0,0,0" Visibility="Hidden"/>
+            <Label x:Name="ürünkisim2" Content="Label" Height="30" Width="100" RenderTransformOrigin="0.5,0.5" Margin="200,0,0,20" HorizontalAlignment="Left" Visibility="Hidden">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-80"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="ürünkfiyat2" Content="Label" Height="30" Width="100" RenderTransformOrigin="0.5,0.5" Margin="200,0,0,0" HorizontalAlignment="Left" Visibility="Hidden">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-80"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="ürünkisim3" Content="Label" Height="30" Width="100" RenderTransformOrigin="0.5,0.5" Margin="350,0,0,20" HorizontalAlignment="Left" Visibility="Hidden">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-160"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="ürünkfiyat3" Content="Label" Height="30" Width="100" RenderTransformOrigin="0.5,0.5" Margin="350,0,0,20" HorizontalAlignment="Left" Visibility="Hidden">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-160"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="ürünkisim4" Content="Label" Height="30" Width="100" RenderTransformOrigin="0.5,0.5" Margin="500,0,0,20" HorizontalAlignment="Left" Visibility="Hidden">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-260"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="ürünkfiyat4" Content="Label" Height="30" Width="100" RenderTransformOrigin="0.5,0.5" Margin="500,0,0,20" HorizontalAlignment="Left" Visibility="Hidden">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-260"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="ürünkisim5" Content="Label" Height="30" Width="100" RenderTransformOrigin="0.5,0.5" Margin="650,0,0,20" HorizontalAlignment="Left" Visibility="Hidden">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-360"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="ürünkfiyat5" Content="Label" Height="30" Width="100" RenderTransformOrigin="0.5,0.5" Margin="650,0,0,20" HorizontalAlignment="Left" Visibility="Hidden">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-360"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+        </StackPanel>
+        <StackPanel x:Name="anasayfastack" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Visibility="Hidden" Grid.ColumnSpan="2">
+            <Label x:Name="eticaretgiriş" Content="E-Ticaret&#xA;Programımıza hoşgeldiniz.,&#xA;&#xA;" Height="91" Width="336" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" FontStyle="Italic">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="103"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+        </StackPanel>
+        <StackPanel x:Name="Ürünler" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Visibility="Hidden" Grid.ColumnSpan="2">
+            <Label x:Name="kategoriler1" Content="Ürünler&#xA;" Height="91" Width="82" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,0,0,1">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-0.136"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+        </StackPanel>
+        <StackPanel x:Name="Sepet" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Visibility="Hidden" Grid.ColumnSpan="2">
+            <Label x:Name="kategoriler2" Content="Sepet&#xA;Programımıza hoşgeldiniz.&#xA;&#xA;" Height="91" Width="336" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="103"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+        </StackPanel>
+        <StackPanel x:Name="Tedarikçiekle" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Grid.ColumnSpan="2" Visibility="Hidden">
+            <Label x:Name="Tedarikçieklemeyazı" Content="Tedarikçi ekleme&#xA;" Height="49" Width="170" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="3"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="Tedarikçi ismi" Height="30" Width="137" Margin="50,0,0,20" HorizontalAlignment="Left" FontSize="15"/>
+            <TextBox x:Name="tedarikçieklemetxt" Height="30" TextWrapping="Wrap" Width="129" HorizontalAlignment="Left" Margin="50,0,0,20"/>
+            <Button x:Name="tedarikçiekleme" Content="Ekle" Height="41" Width="115" Margin="50,0,0,0" HorizontalAlignment="Left" Background="#FFFFB18C" Click="tedarikçiekleme_Click"/>
+            <Label x:Name="tedarikçibir" Content="" Height="28" Width="156" Margin="0,0,70,20" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-131"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="tedarikçiiki" Content="" Height="28" Width="156" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,70,20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-131"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="tedarikçiüç" Content="" Height="28" Width="156" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,70,20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-131"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="tedarikçidört" Content="" Height="28" Width="156" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,70,20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-131"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="tedarikçibeş" Content="" Height="28" Width="156" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,70,20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-131"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Button x:Name="ted1" Content="X" Height="28" Width="28" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,14,20" Background="Red" BorderThickness="2,2,2,2" BorderBrush="#E5000000" Click="ted1_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-371"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="ted2" Content="X" Height="28" Width="28" RenderTransformOrigin="0.5,0.5" Background="Red" BorderThickness="2,2,2,2" BorderBrush="#E5000000" Margin="0,0,14,20" HorizontalAlignment="Right" Click="ted2_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-371"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="ted3" Content="X" Height="28" Width="28" RenderTransformOrigin="0.5,0.5" Background="Red" BorderThickness="2,2,2,2" BorderBrush="#E5000000" Margin="0,0,14,20" HorizontalAlignment="Right" Click="ted3_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-371"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="ted4" Content="X" Height="28" Width="28" RenderTransformOrigin="0.5,0.5" Background="Red" BorderThickness="2,2,2,2" BorderBrush="#E5000000" Margin="0,0,14,20" HorizontalAlignment="Right" Click="ted4_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-371"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="ted5" Content="X" Height="28" Width="28" RenderTransformOrigin="0.5,0.5" Background="Red" BorderThickness="2,2,2,2" BorderBrush="#E5000000" HorizontalAlignment="Right" Margin="0,0,14,0" Click="ted5_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-371"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </StackPanel>
+        <StackPanel x:Name="Kategoriekle" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Visibility="Hidden" Grid.ColumnSpan="2">
+            <Label x:Name="kategoriyazı" Height="91" Width="336" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Content="Kategoriler">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="Kategori ekle" Height="36" Width="147" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="15">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="20" Y="-35"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox x:Name="kategorieklemetxt" Height="23" TextWrapping="Wrap" Text="" Width="168" HorizontalAlignment="Left" Margin="40,0,0,0" RenderTransformOrigin="0.5,0.5" Background="White">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-20"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Button x:Name="Kategoriekleme" Content="Ekle" Height="61" Width="90" Margin="40,0,0,0" HorizontalAlignment="Left" FontSize="15" FontWeight="Bold" Background="#FFFFAE66" Click="Button_Click"/>
+            <Label Content="Kategoriler" Height="41" Width="106" HorizontalAlignment="Right" Margin="0,0,40,0" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" FontSize="15">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-148"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="kategori1" Content="" Height="34" Width="113" Margin="0,0,40,0" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" >
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-152" X="-50"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="kategori2" Content="" Height="34" Width="113" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,40,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-152" X="-50"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="kategori3" Content="" Height="34" Width="113" RenderTransformOrigin="0.5,0.5" Margin="0,0,40,0" HorizontalAlignment="Right">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-152" X="-50"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="kategori4" Content="" Height="34" Width="113" RenderTransformOrigin="0.5,0.5" Margin="0,0,40,0" HorizontalAlignment="Right">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-152" X="-50"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="kategori5" Content="" Height="34" Width="113" RenderTransformOrigin="0.5,0.5" Margin="0,0,40,0" HorizontalAlignment="Right">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-152" X="-50"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Button x:Name="kategorisil1" Content="x" Height="25" Width="25" HorizontalAlignment="Right" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="0,0,20,10" Background="#FFFF4949" BorderBrush="Black" BorderThickness="2" Click="kategorisil1_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-319"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kategorisil2" Content="x" Height="25" Width="25" RenderTransformOrigin="0.5,0.5" Background="#FFFF4949" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,20,10" Click="kategorisil2_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-319"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kategorisil3" Content="x" Height="25" Width="25" RenderTransformOrigin="0.5,0.5" Background="#FFFF4949" BorderBrush="Black" BorderThickness="2" Margin="0,0,20,10" HorizontalAlignment="Right" Click="kategorisil3_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-319"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kategorisil4" Content="x" Height="25" Width="25" RenderTransformOrigin="0.5,0.5" Background="#FFFF4949" BorderBrush="Black" BorderThickness="2" Margin="0,0,20,10" HorizontalAlignment="Right" Click="kategorisil4_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-319"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kategorisil5" Content="x" Height="25" Width="25" RenderTransformOrigin="0.5,0.5" Background="#FFFF4949" BorderBrush="Black" BorderThickness="2" Margin="0,0,20,10" HorizontalAlignment="Right" Click="kategorisil5_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-319"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </StackPanel>
+
+        <StackPanel x:Name="Ürünekle" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Visibility="Hidden" Grid.ColumnSpan="2">
+            <Label x:Name="ürünekleyazı" Content="Ürün ekleme&#xA;&#xA;" Height="91" Width="134" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="ürünismi" Content="Ürün ismi" Height="28" Width="99" HorizontalAlignment="Left" Margin="40,0,0,20"/>
+            <Label x:Name="ürünfiyatı" Content="Ürün fiyatı" Height="28" Width="99" HorizontalAlignment="Left" Margin="40,0,0,20"/>
+            <Label x:Name="ürünkategorisi" Content="Ürün kategorisi" Height="28" Width="99" HorizontalAlignment="Left" Margin="40,0,0,20"/>
+            <ComboBox x:Name="ürünlerinkategori" Height="23" Width="132" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Margin="20,0,0,0">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="116" Y="-44"/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+            </ComboBox>
+            <TextBox x:Name="yeniürünisim" Height="23" TextWrapping="Wrap" Width="132" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-162" X="-197"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <TextBox x:Name="yeniürünfiyat" Height="23" TextWrapping="Wrap" Width="132" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-137" X="-197"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Button x:Name="ürüneklemebtn" Content="Ürün ekle" Height="39" Width="105" Margin="140,0,0,0" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Click="Ürünekleme_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-63" X="-2"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </StackPanel>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="662,151,0,0" VerticalAlignment="Top" Grid.Column="1" Height="20" Width="0"/>
+        <StackPanel x:Name="üyegiriş" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Grid.ColumnSpan="2" Visibility="Hidden">
+            <Label x:Name="ürünekleyazı1" Content="Üye girişi&#xA;" Height="91" Width="100" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="Kullanıcı Adı" Height="28" Width="89" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="Şifre" Height="28" Width="89" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88" Y="23"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox x:Name="kullanıcıtxt" Height="26" TextWrapping="Wrap" Width="190" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-53" X="50"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <TextBox x:Name="şifretxt" Height="26" TextWrapping="Wrap" Width="190" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-26" X="50"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Button x:Name="girişyapbtn" Content="Giriş Yap" Height="39" Width="90" Background="#FFF6BD6E" Click="girişyapbtn_Click"/>
+            <Label x:Name="hatalılbl" Content="" Height="41" Width="330" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="11"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Button x:Name="üyeolbtns" Content="Üye ol" Height="38" Width="90" RenderTransformOrigin="0.5,0.5" Background="#FFFDEFDC" Click="üyeolbtns_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="100" Y="-80"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </StackPanel>
+        <StackPanel x:Name="ürünbir" Margin="29,89,217,85" Visibility="Hidden">
+            <Label x:Name="ürünbirisim" Content="şkjşöş" Margin="0,0,0,40"/>
+            <Label x:Name="ürünbirfiyat" Content="Label" Margin="0,0,0,40"/>
+            <Label x:Name="ürünbirkategori" Content="Label"/>
+        </StackPanel>
+        <StackPanel x:Name="ürüniki" Margin="183,92,63,82" Visibility="Hidden">
+            <Label x:Name="ürünikiisim" Content="Label" Margin="0,0,0,40"/>
+            <Label x:Name="ürünikifiyat" Content="Label" Margin="0,0,0,40"/>
+            <Label x:Name="ürünikikategori" Content="Label"/>
+        </StackPanel>
+        <StackPanel x:Name="üründört" Margin="90,89,166,85" Visibility="Hidden" Grid.Column="1">
+            <Label x:Name="üründörtisim" Content="Label" Margin="0,0,0,40"/>
+            <Label x:Name="üründörtfiyat" Content="Label" Margin="0,0,0,40"/>
+            <Label x:Name="üründörtkategori" Content="Label"/>
+        </StackPanel>
+        <StackPanel x:Name="ürünüç" Margin="336,89,1,85" Visibility="Hidden">
+            <Label x:Name="ürünüçisim" Content="Label" Margin="0,0,0,40"/>
+            <Label x:Name="ürünüçfiyat" Content="Label" Margin="0,0,0,40"/>
+            <Label x:Name="ürünüçkategori" Content="Label"/>
+        </StackPanel>
+        <StackPanel x:Name="ürünbeş" Margin="239,89,17,85" Visibility="Hidden" Grid.Column="1">
+            <Label x:Name="ürünbeşisim" Content="Label" Margin="0,0,0,40"/>
+            <Label x:Name="ürünbeşfiyat" Content="Label" Margin="0,0,0,40"/>
+            <Label x:Name="ürünbeşkategori" Content="Label"/>
+        </StackPanel>
+        <StackPanel x:Name="Kargocuekle" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Grid.ColumnSpan="2" Visibility="Hidden">
+            <Label x:Name="Kargocuekleme1" Content="Kargo firması ekleme&#xA;" Height="49" Width="214" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="3"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="Kargo firmasının ismi" Height="30" Width="161" Margin="50,0,0,20" HorizontalAlignment="Left" FontSize="15"/>
+            <TextBox x:Name="kargocueklemetxt" Height="30" TextWrapping="Wrap" Width="129" HorizontalAlignment="Left" Margin="50,0,0,20"/>
+            <Button x:Name="kargocuekleme" Content="Ekle" Height="41" Width="115" Margin="50,0,0,0" HorizontalAlignment="Left" Background="#FFFFB18C" Click="kargocuekleme_Click"/>
+            <Label x:Name="karg1" Content="" Height="28" Width="156" Margin="0,0,70,20" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-131"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="karg2" Content="" Height="28" Width="156" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,70,20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-131"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="karg3" Content="" Height="28" Width="156" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,70,20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-131"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="karg4" Content="" Height="28" Width="156" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,70,20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-131"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="karg5" Content="" Height="28" Width="156" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,70,20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-131"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Button x:Name="kar1" Content="X" Height="28" Width="28" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,14,20" Background="Red" BorderThickness="2,2,2,2" BorderBrush="#E5000000" Click="kar1_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-371"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kar2" Content="X" Height="28" Width="28" RenderTransformOrigin="0.5,0.5" Background="Red" BorderThickness="2,2,2,2" BorderBrush="#E5000000" Margin="0,0,14,20" HorizontalAlignment="Right" Click="kar2_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-371"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kar3" Content="X" Height="28" Width="28" RenderTransformOrigin="0.5,0.5" Background="Red" BorderThickness="2,2,2,2" BorderBrush="#E5000000" Margin="0,0,14,20" HorizontalAlignment="Right" Click="kar3_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-371"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kar4" Content="X" Height="28" Width="28" RenderTransformOrigin="0.5,0.5" Background="Red" BorderThickness="2,2,2,2" BorderBrush="#E5000000" Margin="0,0,14,20" HorizontalAlignment="Right" Click="kar4_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-371"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="kar5" Content="X" Height="28" Width="28" RenderTransformOrigin="0.5,0.5" Background="Red" BorderThickness="2,2,2,2" BorderBrush="#E5000000" HorizontalAlignment="Right" Margin="0,0,14,0" Click="kar5_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-371"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </StackPanel>
+        <StackPanel x:Name="Üye_ekranı" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Grid.ColumnSpan="2" Visibility="Hidden">
+            <Label x:Name="ürünekleyazı2" Content="Üye olma" Height="91" Width="104" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="Kullanıcı Adı" Height="28" Width="89" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="Şifre" Height="28" Width="89" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88" Y="23"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox x:Name="üyeekletxt" Height="26" TextWrapping="Wrap" Width="190" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-53" X="50"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <TextBox x:Name="üyeşiftetxt" Height="26" TextWrapping="Wrap" Width="190" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-26" X="50"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Button x:Name="Üyeolbtn" Content="Üye ol" Height="39" Width="90" Background="#FFF6BD6E" Click="Üyeolbtn_Click"/>
+            <Label x:Name="hatalılbl1" Content="" Height="41" Width="330" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="11"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+        </StackPanel>
+        <Button x:Name="Profile" Content="Profile" Background="{x:Null}" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="0.5,0.5" BorderBrush="White" Click="Profile_Click" Visibility="Hidden" Grid.Column="1" Margin="232,375,0,9">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0" Y="-375"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <StackPanel x:Name="Profilepanel" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Grid.ColumnSpan="2" Visibility="Hidden">
+            <Label x:Name="profileheader" Content="Üye girişi" Height="44" Width="345" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Center" FontStretch="Medium" >
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="profile1" Content="Kullanıcı Adı" Height="28" Width="249" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Margin="180,0,0,20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="profile2" Content="Kullanıcı Adı" Height="28" Width="274" RenderTransformOrigin="0.5,0.5" Margin="180,0,0,20" HorizontalAlignment="Left">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="profile3" Content="Kullanıcı Adı" Height="28" Width="328" RenderTransformOrigin="0.5,0.5" Margin="180,0,0,20" HorizontalAlignment="Left">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="profile4" Content="Kullanıcı Adı" Height="28" Width="339" RenderTransformOrigin="0.5,0.5" Margin="180,0,0,20" HorizontalAlignment="Left">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Button x:Name="üyeupdpanelbtn" Content="Üye bilgilerini güncelle" Height="41" Width="148" Background="#FFFCBE7F" Click="üyeupdpanelbtn_Click"/>
+        </StackPanel>
+        <StackPanel x:Name="Profileupdatepanel" Margin="0,51,0,43" Width="800" Background="#FFD4C9B9" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+            <Label x:Name="profileheader1" Content="Üye bilgileriniz değiştirin" Height="44" Width="345" RenderTransformOrigin="0.5,0.5" FontSize="20" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Center" FontStretch="Medium" >
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="profile5" Content="Adınız" Height="28" Width="89" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Margin="180,0,0,20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="profile6" Content="Soyadınız" Height="28" Width="89" RenderTransformOrigin="0.5,0.5" Margin="180,0,0,20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="profile7" Content="Adresiniz" Height="28" Width="89" RenderTransformOrigin="0.5,0.5" Margin="180,0,0,20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="profile8" Content="Doğum Tarihiniz" Height="28" Width="107" RenderTransformOrigin="0.5,0.5" Margin="180,0,0,20" HorizontalAlignment="Left">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-88"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Button x:Name="üyebilgiupd" Content="Üye bilgilerini güncelle" Height="41" Width="148" Background="#FFFCBE7F" Click="üyebilgiupd_Click"/>
+            <DatePicker x:Name="üyeyenidogum" Height="25" Width="144" RenderTransformOrigin="0.506,0.617" Margin="0,0,0,20" FirstDayOfWeek="Monday" IsTodayHighlighted="False">
+                <DatePicker.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-90" X="-100"/>
+                    </TransformGroup>
+                </DatePicker.RenderTransform>
+            </DatePicker>
+            <TextBox x:Name="üyeyeniadres" Height="25" TextWrapping="Wrap" Width="144" Margin="0,0,0,20" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-180" X="-100"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <TextBox x:Name="üyeyeniad" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="144" Height="25">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-320" X="-100"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <TextBox x:Name="üyeyenisoyad" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Width="144" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-300" X="-100"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+        </StackPanel>
+        
+
+    </Grid>
+</Window>
